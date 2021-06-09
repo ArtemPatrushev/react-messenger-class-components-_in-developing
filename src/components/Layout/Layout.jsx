@@ -1,9 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import ChatList from '../../containers/ChatList.js';
 import Header from '../../containers/Header.js';
-import s from './Layout.module.css';
 import SideBar from '../sideBar/sideBar.jsx';
+import s from './Layout.module.css';
 
 export default class Layout extends React.Component {
     static propTypes = {
@@ -14,7 +13,6 @@ export default class Layout extends React.Component {
     render() {
 
         const { children, title } = this.props;
-        console.log(title)
         // const { chatId, chats } = this.props;
         // const { messages } = this.props;
 
@@ -41,4 +39,4 @@ export default class Layout extends React.Component {
             </div>
         );
     };
-}
+};

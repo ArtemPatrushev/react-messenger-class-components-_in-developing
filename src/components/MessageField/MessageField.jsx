@@ -1,10 +1,10 @@
 import React from 'react';
-import Message from '../../containers/Message.js';
 import PropTypes from 'prop-types';
-import s from './MessageField.module.css';
 import TextField from '@material-ui/core/TextField';
 import Fab from '@material-ui/core/Fab';
 import SendIcon from '@material-ui/icons/Send';
+import Message from '../../containers/Message.js';
+import s from './MessageField.module.css';
 
 
 export default class MessageField extends React.Component {
@@ -35,7 +35,7 @@ export default class MessageField extends React.Component {
 
         if(!input) {
             return;
-        }
+        };
 
         const { chatId, messages } = this.props;
         const lastMessageId = Number(Object.keys(messages).pop());   // с помощью данного метода берем идентификатор нашего последнего сообщения
@@ -72,7 +72,7 @@ export default class MessageField extends React.Component {
     handleInputKeyUp = (event) => {
         if (event.keyCode === 13) { // берем событие, проверяем на какой клавише оно произошло (по коду клавиши (нужно гуглить)), 13 - код enter
             this.onSendNewMessage();
-        }
+        };
     };
 
     handleChangeInput = (/*event*/ { target: { value } }) => {
@@ -100,7 +100,7 @@ export default class MessageField extends React.Component {
                     author={author}
                     chatId={chatId}
                     messageId={messageId} />
-            )
+            );
         });
 
         return (
@@ -128,4 +128,4 @@ export default class MessageField extends React.Component {
             </div>
         );
     };
-}
+};

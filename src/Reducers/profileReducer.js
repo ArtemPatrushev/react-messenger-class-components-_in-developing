@@ -13,7 +13,6 @@ const initialStore = {
     isLoading: false
 };
 
-
 export default function profileReducer(store = initialStore, action) {
     switch (action.type) {
         case LOAD_PROFILE_REQUEST: {
@@ -46,5 +45,5 @@ export default function profileReducer(store = initialStore, action) {
         }
         default:
             return store;
-    }
-}
+    };
+};

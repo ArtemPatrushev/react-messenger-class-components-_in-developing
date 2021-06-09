@@ -14,21 +14,21 @@ export const addChat = (title) => {
     return {
         type: ADD_CHAT,
         title
-    }
+    };
 };
 
 export const markChatRead = (chatId) => {
     return {
         type: MARK_CHAT_READ,
         chatId
-    }
+    };
 };
 
 export const markChatUnread = (chatId) => {
     return {
         type: MARK_CHAT_UNREAD,
         chatId
-    }
+    };
 };
 
 // при помощи библиотеки redux-api-middleware мы можем не создавать 3 отдельных action, а вписать их все здесь
@@ -53,5 +53,5 @@ export const deleteChat = (chatId) => {
     return {
         type: DELETE_CHAT,
         chatId
-    }
+    };
 };

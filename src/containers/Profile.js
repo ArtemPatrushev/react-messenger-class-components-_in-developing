@@ -4,11 +4,10 @@ import {loadProfile} from '../Actions/profileAction.js';
 import Profile from '../components/Profile/Profile.jsx';
 
 const mapStateToProps = (store) => {
-    // debugger;
     return {
         profile: store.profileReducer.profile,
         isLoading: store.profileReducer.isLoading,
-    }
+    };
 };
 
 const mapDispatchToProps = dispatch => bindActionCreators({

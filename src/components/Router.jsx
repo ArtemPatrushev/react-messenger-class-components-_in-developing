@@ -13,6 +13,7 @@ export default class Router extends React.Component {
         chats: PropTypes.object.isRequired,
         chatId: PropTypes.string,
     };
+
     render() {
         return (
             <Switch>
@@ -39,7 +40,6 @@ export default class Router extends React.Component {
                     </Layout>
                 )} />
             </Switch>
-        )
-        debugger;
-    }
-}
+        );
+    };
+};

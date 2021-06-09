@@ -18,7 +18,6 @@ const initialStore = {
     isLoading: false 
 };
 
-
 export default function chatReducer(store = initialStore, action) {
     switch (action.type) {
         case SEND_MESSAGE: {
@@ -119,13 +118,6 @@ export default function chatReducer(store = initialStore, action) {
         }
         case LOAD_CHATS_SUCCESS: {
             const chats = action.payload.entities.chats;
-            
-            // payload.forEach(({id, title, messageList}) => {
-            //     chats[id] = {
-            //         title, 
-            //         messageList
-            //     };
-            // });
 
             return {
                 ...store,
@@ -135,5 +127,5 @@ export default function chatReducer(store = initialStore, action) {
         }
         default:
             return store;
-    }
-}
+    };
+};

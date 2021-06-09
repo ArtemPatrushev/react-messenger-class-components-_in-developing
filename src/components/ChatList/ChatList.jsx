@@ -1,5 +1,4 @@
 import React from 'react';
-import s from './ChatList.module.css';
 import PropTypes from 'prop-types';
 import { push } from 'connected-react-router';
 import ListSubheader from '@material-ui/core/ListSubheader';
@@ -11,6 +10,7 @@ import SendIcon from '@material-ui/icons/Send';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import DeleteIcon from '@material-ui/icons/Delete';
 import IconButton from '@material-ui/core/IconButton';
+import s from './ChatList.module.css';
 
 
 export default class ChatList extends React.Component {
@@ -33,13 +33,13 @@ export default class ChatList extends React.Component {
 
     componentDidMount() {
         this.props.loadChats();
-    }
+    };
 
     componentDidUpdate(prevProps) {
         if (prevProps.chatId !== this.props.chatId) {
             this.props.markChatRead(this.props.chatId);
-        }
-    }
+        };
+    };
 
     handleEnterChatName = (event) => {
         console.log(event.target.value);
@@ -59,20 +59,19 @@ export default class ChatList extends React.Component {
 
     deleteChatClick = () => {
         this.props.deleteChat(this.props.chatId);
-    }
+    };
 
     handleNavigate = (link) => {
        this.props.push(link);
     };
 
     render() {
-
         const { chatName } = this.state;
         const { chats, isLoading } = this.props;
 
         if (isLoading) {
             return <CircularProgress />;
-        }
+        };
 
         return (
             <List
@@ -89,11 +88,6 @@ export default class ChatList extends React.Component {
                     // key всегда на верхнем элементе рендера
                     // to={`/chat/${id}`} --- позволяет перейти по указанной ссылке
                     // selected={id === this.props.chatId} --- фиксируется выбранный чат - выделение цветом
-                    
-                   
-                        // <ListItem button selected={id === this.props.chatId} onClick={() => this.handleNavigate(`/chat/${id}`)} key={id}>
-                        //     <ListItemText primary={value.title} />
-                        // </ListItem>
                         <div className={s.chatItem}>
                             <ListItem
                                 key={id}

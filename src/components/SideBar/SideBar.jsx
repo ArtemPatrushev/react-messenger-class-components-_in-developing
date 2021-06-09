@@ -5,7 +5,7 @@ import s from './SideBar.module.css';
 const menuBar = {
     profilePage: { name: 'Profile', path: '/profile' },
     chatsPage: { name: 'Chats', path: '/chat/1' }
-}
+};
 
 export default class SideBar extends React.Component {
 
@@ -15,6 +15,6 @@ export default class SideBar extends React.Component {
                 <NavLink className={s.links} to={menuBar.profilePage.path}>Profile</NavLink>
                 <NavLink className={s.links} to={menuBar.chatsPage.path}>Chats</NavLink>
             </div>
-        )
-    }
-}
+        );
+    };
+};
